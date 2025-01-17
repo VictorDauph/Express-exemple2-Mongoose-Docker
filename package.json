@@ -1,5 +1,5 @@
 {
-  "name": "express-exemple2-mongoose-docker",
+  "name": "express-exercice2-mongoose-docker",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.5",
     "ts-node-dev": "^2.0.0",

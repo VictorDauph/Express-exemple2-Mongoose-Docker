@@ -5,15 +5,18 @@ services:
     container_name: express-api-exemple-2 #Définition du nom du container de l'api
     ports:
       - "3000:3000" #exposition du port de l'api hors-conteneur
+    env_file:
+      - .env
     depends_on:
       - mongodb # l'api doit être lancée après l'installation du conteneir de la BDD
     volumes:
-      - .:/app # partage code entre hôte et conteneur pour que nodemon puisse fonctionner
-      - /app/node_modules # Empêche le partage des node_modules entre hôte et conteneur
+      - ./src:/app/src
+      - /app/node_modules
     environment:
       - NODE_ENV=development #Nous travaillons dans un environnement de DEV
-    command: npm run start #Commande à lancer après l'installation du 
-                            #container pour lancer l'app automatiquement
+    command: npm run start
+      #Commande à lancer après l'installation du 
+      #container pour lancer l'app automatiquement
 
   #Définition du second container                 
   mongodb:

@@ -1,11 +1,16 @@
 import express from 'express';
-import { getTest, postTest } from '../controlers/testControllers';
-import { getAllTodos } from '../controlers/todoControllers';
+import { createTodo, getAllTodos, getfalseTodos, modifyTodo } from '../controlers/todoControllers';
 //Création d'un sous-router
 const router = express.Router();
 
 //Création d'un endpoint lié au sous-router
 router.get('/', getAllTodos)
+
+router.get('/false', getfalseTodos)
+
+router.post('/', createTodo)
+
+router.put('/:id', modifyTodo);
 
 
 

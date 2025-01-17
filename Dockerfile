@@ -17,6 +17,7 @@ RUN npm install -g nodemon
 # Copier le reste des fichiers dans le conteneur (pour le fonctionnement correct de nodemon)
 COPY . .
 
+
 #Cmd est une instruction lancée à l'instanciation du conteneur.
 # Commande à exécuter au démarrage du conteneur
 CMD ["npm", "start"]
